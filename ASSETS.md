@@ -22,6 +22,9 @@ Final selected prompt:
 
 ## Other assets
 
+- `dist/assets/velunova-banner.webp` and `velunova-banner-768.webp`: optimized copies of the user-supplied `Velunova_banner_clean.png`. The banner's animation uses CSS; the original image is preserved.
+- `dist/assets/plushies/*.webp`: images extracted from the user-supplied `Custom-Character-Plushies (1).pdf` for the plushies showcase, labeled as illustrative concepts.
+
 - `dist/assets/brand-universe.webp`: optimized copy of the supplied image.
 - `dist/assets/outfit-latin.ttf`: self-hosted Outfit variable font from the Google Fonts repository. License: `dist/assets/OFL.txt`.
 - Campaign and Bloom visuals: native HTML/CSS concept studies, explicitly labeled as illustrative, not client projects.

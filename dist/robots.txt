@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://velunova-creative-studio.chalkymyrtle8.chatgpt.site/sitemap.xml
+Sitemap: https://velunova.vercel.app/sitemap.xml

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFile, access} from 'node:fs/promises';
+import {readFile, access, readdir} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {createBrief} from '../dist/brief.js';
 
@@ -12,11 +12,21 @@ test('project brief preserves customer content and explains delivery', () => {
   assert.ok(brief.includes('has not been sent to the studio'));
 });
 test('all local page assets and fragment links resolve', async () => {
-  const html = await readFile('dist/index.html', 'utf8');
-  for (const [,path] of html.matchAll(/(?:src|href)="(\/[^"#]+)"/g)) await access(resolve('dist', '.' + path));
-  for (const [,id] of html.matchAll(/href="#([^"]+)"/g)) assert.ok(html.includes(`id="${id}"`), `Missing section: ${id}`);
-  assert.equal([...html.matchAll(/<h1[\s>]/g)].length, 1);
-  const metadata = JSON.parse(html.match(/<script type="application\/ld\+json">\s*([\s\S]+?)\s*<\/script>/)[1]);
-  assert.equal(metadata.name, 'Velunova Creative Studio');
-  assert.equal(metadata['@type'], 'ProfessionalService');
+  const pages = (await readdir('dist')).filter(file => file.endsWith('.html'));
+  for (const page of pages) {
+    const html = await readFile(`dist/${page}`, 'utf8');
+    for (const [,path] of html.matchAll(/(?:src|href)="([^"]+)"/g)) {
+      const url = new URL(path, `https://velunova.vercel.app/${page}`);
+      if (url.origin !== 'https://velunova.vercel.app') continue;
+      const file = resolve('dist', '.' + (url.pathname === '/' ? '/index.html' : url.pathname));
+      await access(file);
+      if (url.hash) assert.ok((await readFile(file, 'utf8')).includes(`id="${url.hash.slice(1)}"`), `Missing section: ${url.href}`);
+    }
+    assert.equal([...html.matchAll(/<h1[\s>]/g)].length, 1, `${page} needs one main heading`);
+    const metadata = JSON.parse(html.match(/<script type="application\/ld\+json">\s*([\s\S]+?)\s*<\/script>/)[1]);
+    assert.ok(metadata.name);
+    assert.equal(metadata['@type'], page === 'index.html' ? 'ProfessionalService' : 'CollectionPage');
+    const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
+    assert.equal(new Set(ids).size, ids.length, `Duplicate IDs in ${page}`);
+  }
 });
