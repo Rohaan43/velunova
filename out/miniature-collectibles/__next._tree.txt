@@ -2,4 +2,4 @@
 :HL["/assets/miniatures/hero.jpg","image",{"fetchPriority":"high"}]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"miniature-collectibles","h":96,"c":"$Q2"}]]
-0:{"b":"z54R3XhslcMtWxCaGyBlu","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"Iw70BQML9XRnqi3B6Rw2o","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
