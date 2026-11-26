@@ -32,21 +32,21 @@ const projects = {
     title: 'A little magic. Entirely Velunova.',
     description: 'The supplied Velunova artwork is the heart of this creative world: a violet night sky, a celestial wordmark, expressive characters, and collectible creations. This is our own brand artwork, presented as a window into the studio’s visual identity.',
     deliverables: ['Celestial visual language and violet brand palette', 'Character artwork and imaginative illustration', 'Custom plushies, collectibles, and 2D/3D possibilities'],
-    service: 'Brand identity & design'
+    service: 'Character Artwork'
   },
   campaign: {
     category: 'Illustrative studio concept · Not client work',
     title: 'Made for the next big thing.',
     description: 'An illustrative campaign direction exploring confident typography, a memorable visual motif, and a simple message. A starting point for discussing how campaign creative can reflect your brand and audience.',
     deliverables: ['Campaign message and visual direction', 'Adaptable social media layouts', 'Consistent creative across touchpoints'],
-    service: 'Social media & content'
+    service: 'Illustrations'
   },
   digital: {
     category: 'Illustrative studio concept · Not client work',
     title: 'A fresh digital perspective.',
     description: 'An imaginary brand concept exploring how a fresh identity can become a focused web experience. This design study pairs expressive forms with clear typography and an approachable interface.',
     deliverables: ['Visual identity direction', 'Website art direction and page composition', 'Responsive experience planning'],
-    service: 'Web design & experiences'
+    service: '& More!'
   }
 };
 const projectDialog = document.querySelector('#project-dialog');
