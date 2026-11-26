@@ -1,0 +1,1 @@
+Let Vercel detect the Next.js output directory
