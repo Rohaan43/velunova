@@ -1,0 +1,12 @@
+{
+  "name": "velunova-creative-studio",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Velunova Creative Studio — creative thinking, digital impact.",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "test": "node --test tests/*.test.mjs"
+  }
+}
