@@ -1,5 +1,15 @@
 # Asset provenance
 
+## Reference hero redesign
+
+Files: `dist/assets/velunova-hero-scene.webp` and `dist/assets/velunova-hero-scene-900.webp`.
+
+Created with the built-in image generation tool, editing the user-supplied `Velunova_banner_clean.png`. The supplied clean banner is preserved in the gallery. The new hero adapts its characters to the user's reference layout: open sky for a centered HTML headline and characters along the bottom.
+
+Final prompt:
+
+> Edit the provided Velunova brand illustration into a cinematic wide website hero BACKGROUND ASSET, 16:9 landscape. Preserve the recognizable artwork style, pastel purple/pink palette, dark-haired anime boy on left, smiling dark-haired girl with cat-ear headphones on right holding a white bunny, black hooded plush cat, the two little seated character plushies, pink gift boxes and books, crescent moon, fairytale castle and cloud motifs. This is the SAME visual world, rearranged to fit a web hero. Layout requirement: TOP 55% and CENTER UPPER area of image must be a spacious quiet luminous pale lilac and blush cloud sky with extremely low detail, open negative space for a large dark HTML headline, description, and button to be placed later by a developer. Arrange all characters, plushies and gifts as one large scene along the BOTTOM 40%, like a foreground illustration across the bottom of an editorial landing page, with the boy and girl toward the left and right edges and cute plush characters near bottom center. Keep all characters fully clothed. Heads stay below the vertical midpoint, no huge faces in upper text space. Small distant castle between them near the horizon and a delicate crescent moon off to the side. Smooth hazy lavender clouds connect the upper empty sky to the lower character scene. Keep the lightest sky at upper center for readable dark headline text. Remove ALL existing lettering and typography including Velunova wordmark, Creative Studio, taglines, words on gift boxes, borders and labels. NO TEXT, no logos, no UI, no buttons. This is an asset used behind real HTML navigation and headline. Fine detailed polished anime illustration, faithful to original reference, soft atmospheric lighting. Composition akin to a travel landing page with open sky headline area and a large foreground subject across the bottom, but entirely Velunova characters and plushies.
+
 Built-in ImageGen was used for the selected hero and transparent logo extraction. Project assets are stored locally in `dist/assets/`. The original user-supplied image remains unchanged.
 
 ## Celestial hero
