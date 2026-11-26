@@ -5,8 +5,8 @@ const projects = {
   universe: {
     category: 'The Velunova brand universe',
     title: 'A little magic. Entirely Velunova.',
-    description: 'The supplied Velunova artwork is the heart of this creative world: a violet night sky, a celestial wordmark, expressive characters, and collectible creations. This is our own brand artwork, presented as a window into the studio’s visual identity.',
-    deliverables: ['Celestial visual language and violet brand palette', 'Character artwork and imaginative illustration', 'Custom plushies, collectibles, and 2D/3D possibilities'],
+    description: 'A miniature world of original characters, plush companions, and creative possibilities. This illustrative brand concept brings together the crafts at the heart of Velunova, from character artwork to keepsakes you can hold.',
+    deliverables: ['Original character artwork and illustrations', 'Custom plushies and collectible concepts', '2D/3D models and personalized creative commissions'],
     service: 'Character Artwork'
   },
   campaign: {

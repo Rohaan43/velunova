@@ -1,5 +1,15 @@
 # Asset provenance
 
+## Redesigned gallery artwork
+
+Files: `dist/assets/velunova-brand-world.webp` and `dist/assets/velunova-brand-world-840.webp`.
+
+Created with the built-in image generation tool from the user-supplied clean banner. The company wordmark is overlaid separately from the existing logo asset to preserve its lettering.
+
+Final prompt:
+
+> Redesign the supplied Velunova illustrated promotional image into an elegant cohesive 16:9 landscape brand showcase artwork for a creative studio website. Preserve the dreamy lavender, midnight plum, pale pink, champagne palette and the supplied brand's recognizable character motifs. A carefully arranged miniature creative world at twilight: on the left, the cute black hooded cat plush with lavender bow and the dark-haired boy as a small detailed plush collectible; on the right, the cat-eared headphone girl reinterpreted as a beautifully crafted plush doll holding a soft white bunny, with pastel gift boxes; near bottom, a tiny white-haired plush character beside books. The items sit within a soft lavender cloud stage and flowering miniature garden, with a distant moonlit fairytale castle and little glowing stars. Include tasteful creative objects among the foreground scene: a paint palette with brush, a small cube model, framed character sketch, tiny crown, and wrapped gift, representing the studio's crafts. Tighter purposeful composition than the input: use the entire image, no huge blank lower half, no flat empty rectangle. Leave ONLY a modest dark plum area in the CENTER occupying roughly 35 percent width and 25 percent height for a white logo to be overlaid in HTML later, surrounded by the characters and craft objects. Center should have enough contrast behind white logo, but all lower area must be richly composed with purposeful plushies and creative objects, no giant gap. Premium illustrated toy atelier and storybook set aesthetic, tactile fabrics, detailed plush fur, elegant cinematic glow, faithful to the source's character personalities, polished editorial composition, very clear focal hierarchy. No lettering, no text, no logos, no watermark, no UI, no inset panels or borders. This is a brand world image asset, not a website screenshot.
+
 ## Reference hero redesign
 
 Files: `dist/assets/velunova-hero-scene.webp` and `dist/assets/velunova-hero-scene-900.webp`.
