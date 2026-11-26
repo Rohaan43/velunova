@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile, access, readdir} from 'node:fs/promises';
 import {resolve} from 'node:path';
-import {createBrief} from '../dist/brief.js';
+import {createBrief} from '../lib/brief.js';
 
 test('project brief preserves customer content and explains delivery', () => {
   const brief = createBrief({name:'  Alex  ',email:'alex@example.com',service:'Brand identity & design',message:'  Launch our new café with a memorable identity.  '});
@@ -12,13 +12,14 @@ test('project brief preserves customer content and explains delivery', () => {
   assert.ok(brief.includes('has not been sent to the studio'));
 });
 test('all local page assets and fragment links resolve', async () => {
-  const pages = (await readdir('dist')).filter(file => file.endsWith('.html'));
+  const pages = (await readdir('out')).filter(file => file.endsWith('.html') && !['404.html', '500.html', '_not-found.html'].includes(file));
   for (const page of pages) {
-    const html = await readFile(`dist/${page}`, 'utf8');
+    const html = await readFile(`out/${page}`, 'utf8');
     for (const [,path] of html.matchAll(/(?:src|href)="([^"]+)"/g)) {
       const url = new URL(path, `https://velunova.vercel.app/${page}`);
       if (url.origin !== 'https://velunova.vercel.app') continue;
-      const file = resolve('dist', '.' + (url.pathname === '/' ? '/index.html' : url.pathname));
+      const pathname = url.pathname === '/' ? '/index.html' : url.pathname;
+      const file = resolve('out', '.' + (pathname.split('/').pop().includes('.') ? pathname : `${pathname}.html`));
       await access(file);
       if (url.hash) assert.ok((await readFile(file, 'utf8')).includes(`id="${url.hash.slice(1)}"`), `Missing section: ${url.href}`);
     }

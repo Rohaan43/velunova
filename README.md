@@ -1,35 +1,44 @@
 # Velunova Creative Studio
 
-A responsive, dependency-free digital marketing and creative studio website built from the supplied Velunova brand reference. The site uses the original brand artwork, an extracted logo, a violet celestial palette, self-hosted Outfit typography, and optimized WebP images.
+Next.js App Router website with React components, a custom plushies showcase, self-hosted fonts, and optimized artwork.
 
-## Run and check
+## Develop
+
+Requires Node.js 20.9 or newer.
 
 ```sh
+npm ci
 npm run dev
-npm test
 ```
 
-Open the URL printed by the server. The deployable website is `dist/`; no build or package installation is needed. The Node server is for local preview, while production uses static hosting.
+Visit the local URL printed by Next.js. Pages live at `/` and `/custom-plushies`.
 
-## Included
+## Build and verify
 
-- Responsive layout, mobile navigation, service accordions, and project dialogs.
-- Original supplied artwork plus clearly labeled illustrative campaign and website concepts.
-- A project brief form that validates answers and downloads a text file. It does not send an inquiry or save visitor data.
-- Semantic HTML, skip navigation, labeled inputs, native keyboard-accessible dialogs and accordions, visible focus, and reduced-motion support.
-- Search title and description, canonical URL, Open Graph and Twitter metadata, ProfessionalService structured data, robots.txt, and sitemap.xml.
-- Local assets, responsive hero images, lazy-loaded below-fold images, and no client-side framework or third-party runtime requests.
+```sh
+npm run build
+npm test
+npm start
+```
 
-## Before a public business launch
+The Next.js build generates the static website in `out/`. `npm start` previews that output at `http://127.0.0.1:3000`. Generated `out/` and `.next/` directories are ignored by Git.
 
-The user elected to skip business contact details. Supply a verified email, WhatsApp number, or form endpoint to enable direct inquiries. Keep the download-only copy accurate until delivery is connected.
+## Source layout
 
-New Sites are private by default. Search engines cannot index an authenticated private preview. Public access and a public domain are required for search visibility. If the domain changes, update absolute URLs in `dist/index.html`, `dist/sitemap.xml`, and `dist/robots.txt`. SEO rankings and production latency depend on hosting, the domain, competition, and ongoing content; no score or ranking is promised.
+- `app/`: pages, shared layout, SEO metadata, and styles.
+- `components/`: shared header and footer, mobile navigation, privacy and project dialogs, and the brief form.
+- `lib/`: project descriptions and the project brief formatter.
+- `public/assets/`: local images, icons, and the Outfit font.
+- `public/robots.txt` and `public/sitemap.xml`: search discovery for the public domain.
 
-Confirm final service offerings with the business. Digital marketing services follow the user's brief; creative production services follow the supplied image. There are no invented clients, testimonials, results, or business contact details.
+Native details elements preserve service and FAQ behavior. React owns interactive navigation, dialogs, and form submission. The project form validates answers and downloads a brief locally; it does not send an inquiry or store visitor data. Contact details were intentionally omitted by the user.
 
-## Verification
+## Deployment
 
-Automated checks cover brief contents, asset references, section links, one H1, and structured metadata. Browser checks covered 320, 390, 768, 1024, and 1440 pixel widths, service expansion, project dialogs, service selection, mobile navigation, and successful local brief download. No browser JavaScript errors were observed. A public Lighthouse run, search indexing, and real-device network measurements have not been performed.
+Vercel configuration selects Next.js, runs `npm run build`, and serves `out/`. The old `/custom-plushies.html` URL redirects permanently to `/custom-plushies`. Keep the production branch selection in Vercel aligned with the branch intended for publication.
 
-Generated asset provenance and prompts are in `ASSETS.md`. Outfit is licensed under the SIL Open Font License included in `dist/assets/OFL.txt`.
+The existing Sites manifest also points to `out/` for static hosting. Source code and assets are versioned; build output is regenerated for deployment.
+
+Tests cover project brief contents, exported assets, cross-page links, section anchors, unique IDs, one H1 per page, and structured metadata. Run the build before testing.
+
+Image provenance and generation prompts are in `ASSETS.md`. Outfit's license is included at `public/assets/OFL.txt`.

@@ -1,0 +1,8 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "outputDirectory": "out",
+  "redirects": [
+    { "source": "/custom-plushies.html", "destination": "/custom-plushies", "permanent": true }
+  ]
+}
